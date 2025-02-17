@@ -5,6 +5,7 @@ import connectDB from "./lib/db-connect.js";
 import transactionRoutes from "./routes/transaction-routes.js";
 import path from "path";
 dotenv.config();
+const app = express();
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
@@ -13,12 +14,13 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: "http://localhost:5173",
-}));
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
