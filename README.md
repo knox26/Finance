@@ -52,7 +52,7 @@ This is a Finance Management Application built with a React frontend and an Expr
 1. Create a `.env` file in the `backend` directory and add the following environment variables:
 
    ```env
-   PORT=5000
+   PORT=5001
    MONGODB_URI=your_mongodb_connection_string
    ```
 
